@@ -454,15 +454,18 @@
 
     .contact-links {
       display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      max-width: 400px;
+      margin: 0 auto;
     }
 
     .contact-link {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
+      width: 100%;
       padding: 16px 36px;
       font-family: 'Oswald', sans-serif;
       font-size: 1rem;
@@ -474,11 +477,11 @@
       transition: all 0.3s ease;
     }
 
-    .contact-link.primary { background: var(--gold); color: var(--navy); }
-    .contact-link.primary:hover { background: var(--sand); transform: translateY(-2px); }
+    .contact-link.primary { background: var(--sky); color: var(--white); }
+    .contact-link.primary:hover { background: var(--deep-blue); transform: translateY(-2px); }
 
-    .contact-link.secondary { border: 2px solid var(--gold); color: var(--gold); }
-    .contact-link.secondary:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); }
+    .contact-link.gold { background: var(--bright-gold); color: var(--navy); font-weight: 700; }
+    .contact-link.gold:hover { background: var(--gold); transform: translateY(-2px); }
 
     footer {
       background: var(--navy);
@@ -516,10 +519,9 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <div>
         <div class="hero-photo">
           <img src="george.jpg" alt="George Kalamaras for Mayor of San Diego">
-      </div>
+        </div>
       <div class="hero-text">
         <div class="hero-label">Candidate for Mayor of San Diego</div>
         <h1 class="hero-name">George<span>Kalamaras</span></h1>
@@ -675,9 +677,8 @@
       <h2 class="section-title">Join Team Kalamaras</h2>
       <p>This isn&rsquo;t about politics. It&rsquo;s about San Diego. Whether you want to volunteer, donate, or just share your ideas about how to make this city better, George wants to hear from you. Together, we make San Diego great again.</p>
       <div class="contact-links">
-        <a href="mailto:george@georgekalamaras.com" class="contact-link primary">✉ Email George</a>
-        <a href="#" class="contact-link secondary">✋ Volunteer</a>
-        <a href="#" class="contact-link secondary">💛 Donate</a>
+        <a href="mailto:gkalamaras37@gmail.com" class="contact-link primary">Message George Kalamaras</a>
+        <a href="mailto:gkalamaras37@gmail.com?subject=Hell%20Yeah%20I'm%20In%20-%20Sign%20Me%20Up%20For%20Updates&amp;body=I%20want%20to%20stay%20updated%20on%20the%20Kalamaras%20for%20Mayor%20campaign!%0A%0AName%3A%0ANeighborhood%3A" class="contact-link gold">Hell Yeah, I'm In!</a>
       </div>
     </div>
   </section>
