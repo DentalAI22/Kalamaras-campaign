@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>George Kalamaras for Mayor of San Diego 2028 — Make San Diego Great Again</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0B1D3A;
+      --deep-blue: #14325A;
+      --sky: #2E86C1;
+      --gold: #D4A020;
+      --bright-gold: #E8B828;
+      --sand: #F5E6C8;
+      --white: #FAFAFA;
+      --warm-gray: #E8E0D4;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      color: var(--navy);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: var(--sand);
+      text-align: center;
+      padding: 10px 20px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .topbar .gold { color: var(--bright-gold); font-weight: 700; }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(165deg, var(--navy) 0%, var(--deep-blue) 50%, var(--sky) 100%);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 80%, rgba(212,160,32,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(46,134,193,0.2) 0%, transparent 50%);
+    }
+
+    .hero::after {
+      display: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 36px;
+      max-width: 1100px;
+      padding: 60px 40px 80px;
+    }
+
+    .hero-photo {
+      width: 380px;
+      height: 475px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 4px solid var(--gold);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+      background: linear-gradient(135deg, var(--deep-blue), var(--sky));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    .hero-photo svg { width: 180px; height: 180px; opacity: 0.25; }
+
+    .photo-note {
+      color: rgba(255,255,255,0.4);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .hero-text { color: var(--white); max-width: 640px; text-align: center; }
+
+    .hero-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      animation: fadeUp 0.8s ease 0.15s both;
+    }
+
+    .hero-name span { display: block; color: var(--gold); }
+
+    .hero-slogan {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--bright-gold);
+      margin-top: 18px;
+      padding: 12px 0;
+      border-top: 2px solid rgba(212,160,32,0.3);
+      border-bottom: 2px solid rgba(212,160,32,0.3);
+      animation: fadeUp 0.8s ease 0.25s both;
+    }
+
+    .hero-tagline {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin-top: 20px;
+      color: var(--sand);
+      line-height: 1.55;
+      animation: fadeUp 0.8s ease 0.35s both;
+    }
+
+    .hero-election {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      margin-top: 24px;
+      animation: fadeUp 0.8s ease 0.45s both;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 16px 42px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--navy);
+      background: var(--gold);
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(212,160,32,0.4);
+      animation: fadeUp 0.8s ease 0.55s both;
+    }
+
+    .cta-btn:hover {
+      background: var(--sand);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(212,160,32,0.5);
+    }
+
+    .about {
+      padding: 100px 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 30px;
+      line-height: 1.15;
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      line-height: 1.85;
+      color: #3A3A3A;
+      margin-bottom: 20px;
+    }
+
+    .about p strong { color: var(--navy); }
+
+    .quote-block {
+      margin-top: 40px;
+      padding: 30px 35px;
+      background: linear-gradient(135deg, var(--sand), var(--warm-gray));
+      border-left: 5px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--navy);
+    }
+
+    .quote-block .attribution {
+      display: block;
+      margin-top: 14px;
+      font-style: normal;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .family {
+      padding: 80px 40px;
+      background: var(--sand);
+    }
+
+    .family-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .family-icon {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      flex-shrink: 0;
+      box-shadow: 0 10px 40px rgba(11,29,58,0.2);
+    }
+
+    .family-text { flex: 1; min-width: 280px; }
+
+    .family-text h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .family-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #3A3A3A;
+    }
+
+    .sports {
+      padding: 100px 40px;
+      background: var(--navy);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sports::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 50%, rgba(46,134,193,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 60%, rgba(212,160,32,0.08) 0%, transparent 50%);
+    }
+
+    .sports-inner {
+      max-width: 850px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .sports .section-label { color: var(--gold); }
+    .sports .section-title { color: var(--white); margin-bottom: 30px; }
+
+    .sports p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 22px;
+    }
+
+    .sports p strong { color: var(--bright-gold); font-weight: 600; }
+
+    .sports-quote {
+      margin: 50px 0;
+      padding: 35px 40px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(212,160,32,0.3);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .sports-quote blockquote {
+      font-size: 1.35rem;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--sand);
+    }
+
+    .sports-quote .attribution {
+      margin-top: 16px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .sports-icons {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 50px;
+      flex-wrap: wrap;
+    }
+
+    .sport-item { text-align: center; }
+    .sport-emoji { font-size: 3rem; display: block; margin-bottom: 10px; }
+
+    .sport-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .msdga-banner {
+      padding: 80px 40px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--gold), var(--bright-gold));
+      color: var(--navy);
+    }
+
+    .msdga-banner h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      line-height: 1.2;
+    }
+
+    .msdga-banner p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      max-width: 650px;
+      margin: 20px auto 0;
+      color: var(--deep-blue);
+    }
+
+    .platform { padding: 100px 40px; background: var(--white); }
+
+    .platform-inner { max-width: 1000px; margin: 0 auto; }
+
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 28px;
+      margin-top: 10px;
+    }
+
+    .platform-card {
+      background: var(--white);
+      border: 2px solid #E2DDD5;
+      border-radius: 10px;
+      padding: 36px 28px;
+      transition: all 0.3s ease;
+    }
+
+    .platform-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(11,29,58,0.08);
+    }
+
+    .card-icon { font-size: 2.5rem; margin-bottom: 18px; }
+
+    .card-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .card-text { font-size: 1rem; line-height: 1.75; color: #555; }
+
+    .contact {
+      padding: 100px 40px;
+      text-align: center;
+      background: var(--deep-blue);
+      color: var(--white);
+    }
+
+    .contact-inner { max-width: 700px; margin: 0 auto; }
+
+    .contact .section-title { color: var(--white); margin-bottom: 20px; }
+
+    .contact p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 40px;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-link.primary { background: var(--gold); color: var(--navy); }
+    .contact-link.primary:hover { background: var(--sand); transform: translateY(-2px); }
+
+    .contact-link.secondary { border: 2px solid var(--gold); color: var(--gold); }
+    .contact-link.secondary:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); }
+
+    footer {
+      background: var(--navy);
+      text-align: center;
+      padding: 40px 20px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    footer .gold { color: var(--gold); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content { gap: 30px; padding: 40px 24px 120px; }
+      .hero-photo { width: 280px; height: 350px; }
+      .about, .platform, .sports, .contact, .msdga-banner { padding: 70px 24px; }
+      .platform-grid { grid-template-columns: 1fr; }
+      .sports-icons { gap: 30px; }
+      .family-inner { flex-direction: column; text-align: center; }
+      .family-icon { width: 150px; height: 150px; font-size: 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar"><span class="gold">Make San Diego Great Again</span> &mdash; November 2028</div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div>
+        <div class="hero-photo">
+          <img src="george.jpg" alt="George Kalamaras for Mayor of San Diego">
+      </div>
+      <div class="hero-text">
+        <div class="hero-label">Candidate for Mayor of San Diego</div>
+        <h1 class="hero-name">George<span>Kalamaras</span></h1>
+        <div class="hero-slogan">Make San Diego Great Again</div>
+        <p class="hero-tagline">&ldquo;San Diego gave me everything &mdash; my family, my career, my life. I owe this city a debt I intend to repay by leading it back to greatness.&rdquo;</p>
+        <div class="hero-election">Primary: March 7, 2028 &bull; General: November 7, 2028</div>
+        <a href="#contact" class="cta-btn">Join the Movement</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-label">Meet George</div>
+    <h2 class="section-title">Born Here. Raised Here. Fighting for Here.</h2>
+    <p>
+      <strong>George Kalamaras</strong> isn&rsquo;t a career politician &mdash; he&rsquo;s a San Diego native who has called this city home his <strong>entire life</strong>. Born and raised right here in America&rsquo;s Finest City, George has spent over 25 years as a leader in the insurance industry, rising to Vice President of Business Development at one of the nation&rsquo;s largest insurance agencies. A UC Irvine graduate, George knows what it means to build something from the ground up, manage complex operations, and deliver results that matter.
+    </p>
+    <p>
+      George has been in San Diego his entire life, and he has seen a lot happen and a lot change. Some of it for the better &mdash; but a lot of it for the worse. He&rsquo;s watched neighborhoods decline. He&rsquo;s watched streets that were once safe and clean become unrecognizable. He&rsquo;s watched the city he loves lose some of the magic, the pride, and the identity that once made it the envy of every city in America. And he&rsquo;s had enough.
+    </p>
+    <p>
+      George wants to help this city <strong>rebuild to the glory it once had</strong>. He feels a deep, personal gratitude and an unshakeable love for San Diego &mdash; because this city didn&rsquo;t just give him a place to live. It gave him a life. San Diego helped George, his family, and <strong>multiple generations</strong> of his family build successful small businesses, raise their children, enjoy life, and thrive. The Kalamaras family story <em>is</em> a San Diego story &mdash; and George has never forgotten that.
+    </p>
+    <p>
+      That&rsquo;s why George feels nothing but a <strong>deep debt of gratitude</strong> toward this city. And he would love nothing more than to repay it &mdash; by dedicating his life to leading San Diego back to its former self and its former glory. Not as a politician, but as a proud San Diegan who owes everything to the city that raised him.
+    </p>
+
+    <div class="quote-block">
+      &ldquo;San Diego made me who I am. It gave my family everything &mdash; opportunity, community, a place to build our lives across generations. I owe this city a debt I can never fully repay. But I can start by leading it back to the greatness it deserves. That&rsquo;s not a campaign promise. That&rsquo;s a personal one.&rdquo;
+      <span class="attribution">&mdash; George Kalamaras</span>
+    </div>
+  </section>
+
+  <!-- FAMILY -->
+  <section class="family">
+    <div class="family-inner">
+      <div class="family-icon">👨‍👩‍👧‍👦</div>
+      <div class="family-text">
+        <div class="section-label">Family Man</div>
+        <h3>Rooted in San Diego — For Generations</h3>
+        <p>
+          George is a proud husband and devoted father. He and his lovely wife have built their entire life right here in San Diego, raising two amazing children &mdash; <strong>Penelope</strong> and <strong>Costa</strong> &mdash; who are both currently attending college. But the Kalamaras story in San Diego goes back even further &mdash; multiple generations of his family have called this city home, built small businesses here, and contributed to making San Diego the special place it is. George wants nothing &mdash; absolutely nothing &mdash; more than to dedicate the rest of his life to making San Diego a greater, stronger place so that every family here can continue to thrive for generations to come. He should be our mayor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPORTS / COMMUNITY -->
+  <section class="sports" id="sports">
+    <div class="sports-inner">
+      <div class="section-label">More Than a Game</div>
+      <h2 class="section-title">When We Cheer Together, We&rsquo;re Stronger Together</h2>
+      <p>
+        If you grew up in San Diego, you know the feeling. You know what it was like to put on your Chargers jersey on game day. To high-five a complete stranger in the parking lot. To sit in those stands and feel like this entire city &mdash; every neighborhood, every background, every walk of life &mdash; was <strong>one team</strong>.
+      </p>
+      <p>
+        That wasn&rsquo;t just football. That was <strong>identity</strong>. That was community. That was San Diego standing up and saying to the rest of the country: <em>we&rsquo;re here, we matter, and we can compete with anyone.</em>
+      </p>
+      <p>
+        When we lost the Chargers, we didn&rsquo;t just lose a football team. We lost a piece of who we are. We lost that powerful, unifying feeling of rooting for something bigger than ourselves &mdash; of coming together on Sundays as <strong>one San Diego</strong>, competing against other great American cities, and feeling like we were part of something that put us on the map.
+      </p>
+      <p>
+        George understands that feeling is not just about what happens on a field. <strong>It&rsquo;s about what happens when a city believes in itself.</strong> When neighbors have something to rally around. When a community stands shoulder to shoulder and says: <em>this is our city, and we&rsquo;re going to win.</em>
+      </p>
+      <p>
+        That same competitive fire &mdash; that same sense of pride and purpose &mdash; is exactly what San Diego needs right now. Because today, we&rsquo;re not just competing against other NFL cities. We&rsquo;re competing on a <strong>global scale</strong> &mdash; for jobs, for talent, for investment, for the quality of life our families deserve. And we need a leader who understands that when San Diego comes together with a common cause, there is absolutely nothing we can&rsquo;t accomplish.
+      </p>
+
+      <div class="sports-quote">
+        <blockquote>
+          &ldquo;The Chargers didn&rsquo;t just give us football. They gave us each other. They gave us a reason to believe that San Diego could take on anyone, anywhere. I want to bring that feeling back &mdash; not just in a stadium, but in every neighborhood, every school, every business, and every family in this city. That&rsquo;s what &lsquo;Make San Diego Great Again&rsquo; means to me.&rdquo;
+        </blockquote>
+        <div class="attribution">&mdash; George Kalamaras</div>
+      </div>
+
+      <p>
+        George will fight relentlessly to <strong>bring professional football back</strong> to San Diego. He&rsquo;ll champion the Padres, SD Loyal, and every team that represents our city on a national stage. Because when we have something to cheer for together, we&rsquo;re not just fans &mdash; we&rsquo;re a city united. And a united San Diego is an unstoppable San Diego.
+      </p>
+
+      <div class="sports-icons">
+        <div class="sport-item">
+          <span class="sport-emoji">🏈</span>
+          <span class="sport-label">Bring Football Home</span>
+        </div>
+        <div class="sport-item">
+          <span class="sport-emoji">⚾</span>
+          <span class="sport-label">Our Padres</span>
+        </div>
+        <div class="sport-item">
+          <span class="sport-emoji">⚽</span>
+          <span class="sport-label">SD Soccer</span>
+        </div>
+        <div class="sport-item">
+          <span class="sport-emoji">🌊</span>
+          <span class="sport-label">The SD Lifestyle</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAKE SD GREAT AGAIN BANNER -->
+  <section class="msdga-banner">
+    <h2>Make San Diego<br>Great Again</h2>
+    <p>San Diego was once the undisputed crown jewel of the West Coast &mdash; and it can be again. George has seen this city at its best, and he knows the greatness that lives in every San Diegan. Under his leadership, we won&rsquo;t just manage the decline. We&rsquo;ll reverse it. We&rsquo;ll rebuild. And we&rsquo;ll restore San Diego to the glory it once had and the glory it deserves.</p>
+  </section>
+
+  <!-- PLATFORM -->
+  <section class="platform" id="platform">
+    <div class="platform-inner">
+      <div class="section-label">George&rsquo;s Promises to San Diego</div>
+      <h2 class="section-title">Real Solutions. Not Politics.</h2>
+
+      <div class="platform-grid">
+        <div class="platform-card">
+          <div class="card-icon">🏠</div>
+          <div class="card-title">End the Homelessness Crisis</div>
+          <p class="card-text">Enough managing the problem &mdash; it&rsquo;s time to solve it. George will unite city agencies, nonprofits, healthcare providers, and the private sector for a comprehensive approach that gets people off the streets with real support, real housing, and real accountability.</p>
+        </div>
+        <div class="platform-card">
+          <div class="card-icon">🧹</div>
+          <div class="card-title">Clean Up Our City</div>
+          <p class="card-text">San Diegans deserve clean, safe, beautiful neighborhoods. George will expand sanitation services, crack down on illegal dumping, and restore civic pride in every community &mdash; from the Gaslamp to Pacific Beach to Barrio Logan.</p>
+        </div>
+        <div class="platform-card">
+          <div class="card-icon">🏟️</div>
+          <div class="card-title">Bring Pro Sports Back</div>
+          <p class="card-text">San Diego is a world-class city that lost its world-class team. George will work relentlessly to bring professional football back and champion every team that puts our city on the national and global stage.</p>
+        </div>
+        <div class="platform-card">
+          <div class="card-icon">🛡️</div>
+          <div class="card-title">Public Safety First</div>
+          <p class="card-text">Safe streets are the foundation of everything. George will fully fund and support our police, fire, and first responders while investing in community programs that prevent crime before it starts.</p>
+        </div>
+        <div class="platform-card">
+          <div class="card-icon">🏗️</div>
+          <div class="card-title">Fix Our Infrastructure</div>
+          <p class="card-text">Crumbling roads, aging pipes, broken sidewalks &mdash; the basics have been neglected too long. George will cut the red tape, prioritize smart spending, and get projects done on time and on budget.</p>
+        </div>
+        <div class="platform-card">
+          <div class="card-icon">💼</div>
+          <div class="card-title">Support Small Business</div>
+          <p class="card-text">With 25+ years in business, George knows small businesses are San Diego&rsquo;s backbone. He&rsquo;ll cut unnecessary regulations, streamline permitting, and make sure our local entrepreneurs thrive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="section-label" style="color: var(--gold);">Get Involved</div>
+      <h2 class="section-title">Join Team Kalamaras</h2>
+      <p>This isn&rsquo;t about politics. It&rsquo;s about San Diego. Whether you want to volunteer, donate, or just share your ideas about how to make this city better, George wants to hear from you. Together, we make San Diego great again.</p>
+      <div class="contact-links">
+        <a href="mailto:george@georgekalamaras.com" class="contact-link primary">✉ Email George</a>
+        <a href="#" class="contact-link secondary">✋ Volunteer</a>
+        <a href="#" class="contact-link secondary">💛 Donate</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Paid for by <span class="gold">Kalamaras for Mayor 2028</span></p>
+    <p style="margin-top: 8px;">&copy; 2026 &mdash; All Rights Reserved &mdash; San Diego, California</p>
+    <p style="margin-top: 8px;">Proudly Born &amp; Raised in America&rsquo;s Finest City</p>
+  </footer>
+
+</body>
+</html>
